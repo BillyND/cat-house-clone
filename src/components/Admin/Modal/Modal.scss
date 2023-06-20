@@ -1,0 +1,55 @@
+.preview-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    color: #a6a5a5;
+    border: 1px dashed;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 0 20px 0 20px;
+}
+
+.list-image-preview {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .image-preview {
+        height: 100%;
+        border-radius: 20px;
+        width: 100px;
+    }
+}
+
+
+.image-guest {
+    height: 100%;
+    border-radius: 20px;
+    width: 100px;
+}
+
+
+
+.image-show-delete {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+
+    img {
+        height: 100%;
+        border-radius: 20px;
+    }
+}
+
+
+
+@media only screen and (max-width: 450px) {
+    .list-image-preview {
+        .image-preview {
+
+            width: 80px;
+        }
+    }
+
+}

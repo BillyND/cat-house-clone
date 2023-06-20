@@ -1,0 +1,26 @@
+.icon-contact {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.icon-contact.phone {
+    font-size: 20px;
+}
+
+.icon-contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+
+    div {
+        display: inline-block;
+        width: 25px;
+    }
+}
+
+.footer-component-bootstrap {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white !important;
+    margin-bottom: 0;
+}

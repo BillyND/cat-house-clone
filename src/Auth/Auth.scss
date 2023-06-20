@@ -1,0 +1,178 @@
+.login-page {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    .header-content {
+        padding: 0 20px 0 20px;
+        display: flex;
+        justify-content: right;
+        gap: 8px;
+        align-items: center;
+
+    }
+
+    .header {
+        padding: 10px;
+    }
+
+    button.btnSignup,
+    button.btnLogin {
+        border: none;
+        box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+        background-color: rgb(255, 213, 210);
+        border-radius: 5px;
+        padding: 5px 10px 5px 10px;
+    }
+
+    button.btnSignup:hover {
+        background-color: #ffe6e6;
+    }
+
+    button.btnSignup:disabled {
+        cursor: no-drop;
+    }
+
+    .title {
+        text-align: center;
+        padding-bottom: 20px;
+        margin-top: 50px;
+    }
+
+    .wellcome {
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 20px;
+    }
+
+    label {
+        padding-top: 20px;
+    }
+
+    .btn {
+        margin-top: 20px;
+        color: white;
+    }
+
+
+    .forgotPass {
+        cursor: pointer;
+        color: rgb(108, 105, 105);
+    }
+
+    .forgotPass:hover {
+
+        color: black;
+    }
+
+    .goToHomePage {
+        cursor: pointer;
+        text-align: center;
+        padding-top: 20px;
+        color: rgb(108, 105, 105);
+    }
+
+    .goToHomePage:hover {
+        color: black;
+    }
+
+    .login-signup {
+        margin-top: -40px;
+        z-index: 1000 !important;
+
+        .login-table {
+            width: 50%;
+            border-radius: 50px;
+            background-color: #b49b9b;
+            padding-bottom: 20px;
+            box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+
+            .password-input {
+                position: relative;
+                width: 100%;
+
+                .icon-eye {
+                    cursor: pointer;
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    margin-top: -8px;
+                }
+            }
+
+
+        }
+    }
+
+    .image-background {
+        z-index: 0 !important;
+    }
+
+    .iconLoading {
+        position: sticky;
+        color: rgb(230, 178, 178);
+        margin-bottom: 3px;
+        animation-name: iconLoading;
+        animation-duration: 500ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @keyframes iconLoading {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @media only screen and (max-width: 680px) {
+        .login-signup .title {
+            width: 100%;
+        }
+
+        .login-signup .wellcome {
+            width: 100%;
+        }
+
+        .login-signup .content {
+            width: 70%;
+        }
+
+        .login-signup {
+
+            .login-table {
+                width: 80%;
+
+            }
+        }
+    }
+
+
+    @media only screen and (max-width: 400px) {
+        .wellcome {
+            display: none;
+        }
+
+        .login-signup {
+            .title {
+                margin-top: 30px;
+            }
+
+            .content {
+                margin-top: -20px;
+            }
+
+            .login-table {
+                width: 90%;
+
+            }
+        }
+    }
+
+}

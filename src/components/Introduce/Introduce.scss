@@ -1,0 +1,120 @@
+.introduce-container {
+    font-size: 15px;
+
+    p {
+        font-weight: 500 !important;
+    }
+
+    .introduce-banner {
+        color: white;
+        height: 200px;
+        background-image: url("https://theme.hstatic.net/200000108863/1000985860/14/about02_banner_bkg.jpg?v=3");
+        width: 100% !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        padding: 0 !important;
+        margin: 0 !important;
+
+        .introduce-banner-section {
+            background-color: rgba(0, 0, 0, 0.3);
+            height: 100% !important;
+        }
+    }
+}
+
+.information {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 30px;
+    justify-content: center;
+
+    img {
+        width: 100%;
+    }
+
+    .information-content {
+        margin-top: 20px;
+    }
+
+}
+
+.policy {
+    display: grid;
+    grid-template-columns: 30% 35% 30%;
+    // gap: 30px;
+    justify-content: center;
+
+    .policy-column {
+        img {
+            width: 60px;
+        }
+
+        .img-center {
+            width: 100%;
+        }
+    }
+
+    .policy-item {
+        margin-bottom: 20px;
+        display: flex;
+        text-align: left;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+
+
+.other-infor-column {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 40px;
+    text-align: left;
+    margin-bottom: 80px;
+
+    .other-infor-image {
+        img {
+            width: 100%;
+        }
+    }
+
+    .other-infor-content {
+        ul {
+            li {
+                font-weight: 500 !important;
+                font-size: 15px;
+            }
+        }
+
+        button {
+            background-color: #3393F6;
+            border: none;
+            padding: 5px 23px;
+            color: white;
+            border-radius: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width:991.5px) {
+    .information {
+        grid-template-columns: auto;
+    }
+
+    .policy {
+        grid-template-columns: auto;
+    }
+
+    .other-infor-column {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .column2 {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        margin-bottom: -30px;
+    }
+
+}
