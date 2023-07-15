@@ -116,8 +116,7 @@ const Footer = () => {
           © 2023 Copyright:
           <a
             className="text-reset fw-bold"
-            href="https://github.com/ND-Long/Frs-ManagerUser.git"
-            target="_blank"
+            href="https://github.com/BillyND/cat-house-clone" target="_blank"
           >
             PETSHOP
           </a>
