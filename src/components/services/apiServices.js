@@ -128,7 +128,28 @@ const getAllCategory = (keyWrd) => {
   return axios.get(`/category`);
 };
 
+const searchUserByUsername = (username) => {
+  return axios.get(`/users/?q=${username}`);
+};
+
 export {
   apiLogin,
-  apiSignup, deleteUser, getAllCategory, getAllProducts, getApiSearch, getDistrict, getOneUser, getProductById, getProvince, getSearchOrder, getUserLimit, getWard, postCartOrder, postCreateProduct, putCartOrder, putUpdateInfoUser, putUpdateProduct
+  apiSignup,
+  deleteUser,
+  getAllCategory,
+  getAllProducts,
+  getApiSearch,
+  getDistrict,
+  getOneUser,
+  getProductById,
+  getProvince,
+  getSearchOrder,
+  getUserLimit,
+  getWard,
+  postCartOrder,
+  postCreateProduct,
+  putCartOrder,
+  putUpdateInfoUser,
+  putUpdateProduct,
+  searchUserByUsername,
 };

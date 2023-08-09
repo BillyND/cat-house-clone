@@ -2,14 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { BsEye, BsEyeSlashFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { apiLogin, apiSignup } from "../components/services/apiServices";
+import {
+  apiSignup,
+  searchUserByUsername,
+} from "../components/services/apiServices";
 import "./Auth.scss";
-
 var bcrypt = require("bcryptjs-react");
 
 function Signup() {
   const refInput = useRef(null);
-  const [dataAllUser, setDataAllUser] = useState([]);
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
@@ -20,13 +21,7 @@ function Signup() {
 
   useEffect(() => {
     refInput.current.focus();
-    fetchAllUser();
   }, []);
-
-  const fetchAllUser = async () => {
-    const resAllUser = await apiLogin();
-    setDataAllUser(resAllUser);
-  };
 
   const validateEmail = (email) => {
     return String(email)
@@ -72,10 +67,14 @@ function Signup() {
 
     //check userName
 
-    dataAllUser.map((dataUser) => {
+    const listUserFounded = await searchUserByUsername(username);
+
+    console.log(">>>user", listUserFounded);
+
+    listUserFounded.map((dataUser) => {
       const checkHashUsername = bcrypt.compareSync(username, dataUser.username);
-      // if (username === dataUser.username) {
-      if (checkHashUsername) {
+      if (username === dataUser.username) {
+        // if (checkHashUsername) {
         toast.error("Tài khoản đã tồn tại");
         checkUsername = 1;
         setIsloading(false);
@@ -83,17 +82,14 @@ function Signup() {
     });
 
     if (checkUsername === 0 && checkPassword === 0) {
-      const resSignup = await apiSignup(hashUsername, hashPassword);
+      const resSignup = await apiSignup(username, hashPassword);
       if (resSignup) {
-        setTimeout(async () => {
-          navigate("/login");
-          toast.success("Đăng ký tài khoản thành công!");
-
-          setPassword("");
-          setUserName("");
-          setIsloading(false);
-          navigate("/login");
-        }, 300);
+        navigate("/login");
+        toast.success("Đăng ký tài khoản thành công!");
+        setPassword("");
+        setUserName("");
+        setIsloading(false);
+        navigate("/login");
       }
     }
 

@@ -1,11 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://luxuriant-massive-denim.glitch.me/",
-  // baseURL: "https://3nqjur-8000.csb.app/",
-  // baseURL: "https://json-server-frs-manager-user.vercel.app/",
-  // baseURL: "https://petshop-api-thoe.onrender.com/",
-  // baseURL: "http://localhost:8000",
+  baseURL: "https://enshrined-various-smelt.glitch.me/",
 });
 
 // Add a request interceptor

@@ -3,7 +3,7 @@ import { BsEye, BsEyeSlashFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { apiLogin } from "../components/services/apiServices";
+import { searchUserByUsername } from "../components/services/apiServices";
 import { USER_LOGIN, USER_LOGOUT } from "../redux/actions/userActions";
 import "./Auth.scss";
 var bcrypt = require("bcryptjs-react");
@@ -39,7 +39,6 @@ function Login() {
 
   const handleLogin = async () => {
     setIsLoading(true);
-    const dataAllUser = await apiLogin();
     try {
       if (!validateEmail(username)) {
         toast.error("Email không đúng định dạng");
@@ -53,20 +52,23 @@ function Login() {
         return;
       }
       let checkLogin = 0;
-      dataAllUser.forEach((dataUser, index) => {
+
+      const listUserFounded = await searchUserByUsername(username);
+
+      listUserFounded.forEach((dataUser, index) => {
         //check hass password
         const checkPass = bcrypt.compareSync(password, dataUser.password);
         const checkUsername = bcrypt.compareSync(username, dataUser.username);
 
         // if (password === dataUser.password && username === dataUser.username) {
-        if (checkPass && checkUsername) {
+        if (checkPass && username === dataUser.username) {
           checkLogin = 1;
           toast.success("Đăng nhập thành công!");
           navigate("/");
           setIsLoading(false);
           dispatch({
             type: USER_LOGIN,
-            user: username,
+            user: dataUser,
           });
         }
       });
