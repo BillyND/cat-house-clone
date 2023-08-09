@@ -5,18 +5,14 @@ import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 import {
   putInfoUserAction,
-  putUpdateInfoUserRedux
+  putUpdateInfoUserRedux,
 } from "../../redux/actions/userActions";
-import {
-  putCartOrder
-} from "../services/apiServices";
+import { putCartOrder } from "../services/apiServices";
 import ModalSetStateOrder from "./ModalSetStateOrder";
 function UserListOrder(props) {
-  const listOrderUser = useSelector((state) => state.account.listOrderUser);
   const infoUser = useSelector((state) => state.account.user);
   const dispatch = useDispatch();
   const [showModalState, setShowModalState] = useState(false);
-  const [stateOrder, setStateOrder] = useState(false);
   const [dataStateOrder, setDataStateOrder] = useState();
   const [itemCancelState, setItemCancelState] = useState();
   const [cartSetState, setCartSsetState] = useState("");

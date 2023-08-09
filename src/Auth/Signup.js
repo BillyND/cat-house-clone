@@ -35,65 +35,72 @@ function Signup() {
   };
 
   const handleSignup = async () => {
-    setIsloading(true);
-    let checkUsername = 0;
-    let checkPassword = 0;
+    try {
+      setIsloading(true);
+      let checkUsername = 0;
+      let checkPassword = 0;
 
-    if (!validateEmail(username)) {
-      toast.error("Email không đúng định dạng");
-      setIsloading(false);
-      return;
-    }
-
-    if (!validatePass(password) && checkUsername === 0) {
-      toast.error("Mật khẩu tối thiểu 6 ký tự");
-      setIsloading(false);
-      return;
-    }
-
-    if (password !== rePassword) {
-      toast.error("Mật khẩu nhập lại chưa đúng!");
-      checkPassword = 1;
-      setIsloading(false);
-      return;
-    }
-
-    //make hash password
-    let saltPass = bcrypt.genSaltSync(10);
-    let hashPassword = bcrypt.hashSync(password, saltPass);
-
-    // //make hash username
-    let hashUsername = bcrypt.hashSync(username);
-
-    //check userName
-
-    const listUserFounded = await searchUserByUsername(username);
-
-    console.log(">>>user", listUserFounded);
-
-    listUserFounded.map((dataUser) => {
-      const checkHashUsername = bcrypt.compareSync(username, dataUser.username);
-      if (username === dataUser.username) {
-        // if (checkHashUsername) {
-        toast.error("Tài khoản đã tồn tại");
-        checkUsername = 1;
+      if (!validateEmail(username)) {
+        toast.error("Email không đúng định dạng");
         setIsloading(false);
+        return;
       }
-    });
 
-    if (checkUsername === 0 && checkPassword === 0) {
-      const resSignup = await apiSignup(username, hashPassword);
-      if (resSignup) {
-        navigate("/login");
-        toast.success("Đăng ký tài khoản thành công!");
-        setPassword("");
-        setUserName("");
+      if (!validatePass(password) && checkUsername === 0) {
+        toast.error("Mật khẩu tối thiểu 6 ký tự");
         setIsloading(false);
-        navigate("/login");
+        return;
       }
-    }
 
-    setCheckSignup(!checkSignup);
+      if (password !== rePassword) {
+        toast.error("Mật khẩu nhập lại chưa đúng!");
+        checkPassword = 1;
+        setIsloading(false);
+        return;
+      }
+
+      //make hash password
+      let saltPass = bcrypt.genSaltSync(10);
+      let hashPassword = bcrypt.hashSync(password, saltPass);
+
+      // //make hash username
+      let hashUsername = bcrypt.hashSync(username);
+
+      const listUserFounded = await searchUserByUsername(username);
+
+      listUserFounded.map((dataUser) => {
+        const checkHashUsername = bcrypt.compareSync(
+          username,
+          dataUser.username
+        );
+        if (username === dataUser.username) {
+          // if (checkHashUsername) {
+          toast.error("Tài khoản đã tồn tại");
+          checkUsername = 1;
+          setIsloading(false);
+        }
+      });
+
+      if (checkUsername === 0 && checkPassword === 0) {
+        const resSignup = await apiSignup(username, hashPassword);
+        setTimeout(() => {
+          if (resSignup) {
+            navigate("/login");
+            toast.success("Đăng ký tài khoản thành công!");
+            setPassword("");
+            setUserName("");
+            setIsloading(false);
+            navigate("/login");
+          }
+        }, 300);
+      }
+
+      setCheckSignup(!checkSignup);
+    } catch (error) {
+      setIsloading(false);
+      toast.error("Máy chủ lỗi!");
+      console.error(error);
+    }
   };
 
   const handleKeyPress = (e) => {

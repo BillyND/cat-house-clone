@@ -55,9 +55,9 @@
 
 .header-container {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background-color: #FFDB15 !important;
     width: 100%;
     transition: 1s all ease;
+    background-color: red !important;
 
     button.navbar-toggler.collapsed {
         border: none;

@@ -7,3 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
 }
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
+
+.bg-white {
+  background-color: #FFDB15 !important;
+}

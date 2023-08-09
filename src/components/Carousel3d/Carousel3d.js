@@ -3,12 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {
-  Autoplay,
-  EffectCoverflow,
-  Navigation,
-  Pagination
-} from "swiper";
+import { Autoplay, EffectCoverflow, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";

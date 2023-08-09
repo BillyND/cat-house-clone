@@ -63,13 +63,15 @@ function Login() {
         // if (password === dataUser.password && username === dataUser.username) {
         if (checkPass && username === dataUser.username) {
           checkLogin = 1;
-          toast.success("Đăng nhập thành công!");
-          navigate("/");
-          setIsLoading(false);
-          dispatch({
-            type: USER_LOGIN,
-            user: dataUser,
-          });
+          setTimeout(() => {
+            toast.success("Đăng nhập thành công!");
+            navigate("/");
+            setIsLoading(false);
+            dispatch({
+              type: USER_LOGIN,
+              user: dataUser,
+            });
+          }, 300);
         }
       });
       if (checkLogin === 0) {
@@ -77,7 +79,8 @@ function Login() {
         setIsLoading(false);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      toast.error("Máy chủ lỗi!");
       setIsLoading(false);
     }
   };
