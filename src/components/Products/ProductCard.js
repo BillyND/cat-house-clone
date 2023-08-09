@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { ImEye } from "react-icons/im";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCartRedux } from "../../redux/actions/productActions";
-import { ImEye } from "react-icons/im";
 
 function ProductCard(props) {
   const [isDrag, setIsDrag] = useState();

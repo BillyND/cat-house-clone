@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import ListProduct from "../Products/ListProducts";
-import { useRef } from "react";
-import useDraggableScroll from "use-draggable-scroll";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useDraggableScroll from "use-draggable-scroll";
+import ListProduct from "../Products/ListProducts";
 
 function TopBuy(props) {
   const ref = useRef(null);

@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import { BsEye, BsEyeSlashFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { apiLogin } from "../components/services/apiServices";
-import "./Auth.scss";
-import { useDispatch } from "react-redux";
 import { USER_LOGIN, USER_LOGOUT } from "../redux/actions/userActions";
-import { BsEyeSlashFill, BsEye } from "react-icons/bs";
+import "./Auth.scss";
 var bcrypt = require("bcryptjs-react");
 
 function Login() {
@@ -53,23 +53,21 @@ function Login() {
         return;
       }
       let checkLogin = 0;
-      dataAllUser.map((dataUser, index) => {
+      dataAllUser.forEach((dataUser, index) => {
         //check hass password
-        // const checkPass = bcrypt.compareSync(password, dataUser.password);
-        // const checkUsername = bcrypt.compareSync(username, dataUser.username);
+        const checkPass = bcrypt.compareSync(password, dataUser.password);
+        const checkUsername = bcrypt.compareSync(username, dataUser.username);
 
-        if (password === dataUser.password && username === dataUser.username) {
+        // if (password === dataUser.password && username === dataUser.username) {
+        if (checkPass && checkUsername) {
           checkLogin = 1;
-          setTimeout(() => {
-            toast.success("Đăng nhập thành công!");
-
-            navigate("/");
-            setIsLoading(false);
-            dispatch({
-              type: USER_LOGIN,
-              user: dataUser,
-            });
-          }, 300);
+          toast.success("Đăng nhập thành công!");
+          navigate("/");
+          setIsLoading(false);
+          dispatch({
+            type: USER_LOGIN,
+            user: username,
+          });
         }
       });
       if (checkLogin === 0) {

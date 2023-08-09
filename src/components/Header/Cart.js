@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { useDispatch, useSelector } from "react-redux";
-import "./Header.scss";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import { useNavigate } from "react-router-dom";
 import { GrClose } from "react-icons/gr";
-import { deleteCart, SHOW_CART } from "../../redux/actions/productActions";
+import PerfectScrollbar from "react-perfect-scrollbar";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { SHOW_CART, deleteCart } from "../../redux/actions/productActions";
+import "./Header.scss";
 function Cart(props) {
   const { show } = props;
   const dataCart = useSelector((state) => state.product.cartProduct);

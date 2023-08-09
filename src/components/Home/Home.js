@@ -1,12 +1,10 @@
-import ListProducts from "../Products/ListProducts";
-import { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "./Home.scss";
+import { useEffect, useState } from "react";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { fetchAllProductsRedux } from "../../redux/actions/productActions";
 import SwiperBanner from "../SwiperBanner/SwiperBanner";
 import SwiperProduct from "../SwiperProduct/SwiperProduct";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import "./Home.scss";
 
 import Banner2 from "./Banner2";
 import ListSearch from "./ListSearch";

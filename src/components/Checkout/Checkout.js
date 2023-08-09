@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import "./Checkout.scss"
+import _ from "lodash";
+import React, { useEffect, useRef, useState } from 'react';
 import { GrClose } from 'react-icons/gr';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { decreaseBuyOne, decreaseCart, orderOne, deleteCart, increaseCart, deleteAllCart } from '../../redux/actions/productActions';
 import Select from 'react-select';
-import { getDistrict, getProvince, getWard, postCartOrder } from '../services/apiServices';
 import { toast } from 'react-toastify';
-import OrderCart from './OrderCart';
-import _ from "lodash"
-import { putInfoUserAction, putUpdateInfoUserRedux } from '../../redux/actions/userActions';
-import { changeRouteRedux } from '../../redux/actions/routerActions';
-import { useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { decreaseBuyOne, decreaseCart, deleteAllCart, deleteCart, increaseCart, orderOne } from '../../redux/actions/productActions';
+import { changeRouteRedux } from '../../redux/actions/routerActions';
+import { putInfoUserAction, putUpdateInfoUserRedux } from '../../redux/actions/userActions';
+import { getDistrict, getProvince, getWard, postCartOrder } from '../services/apiServices';
+import "./Checkout.scss";
+import OrderCart from './OrderCart';
 
 const noneOptions = []
 

@@ -1,19 +1,19 @@
+import { useEffect, useRef, useState } from "react";
+import { Navbar } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import { Navbar } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import logoPetShop from "../../assets/logoPetHouse.png";
-import logoMini from "../../assets/logoMini.png";
-import "./Header.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useRef, useState } from "react";
-import { countCartRedux, SHOW_CART } from "../../redux/actions/productActions";
-import { MdShoppingCart } from "react-icons/md";
-import { TiUser } from "react-icons/ti";
-import Cart from "./Cart";
-import { RiSearch2Line } from "react-icons/ri";
 import { FiSearch } from "react-icons/fi";
+import { MdShoppingCart } from "react-icons/md";
+import { RiSearch2Line } from "react-icons/ri";
+import { TiUser } from "react-icons/ti";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import logoMini from "../../assets/logoMini.png";
+import logoPetShop from "../../assets/logoPetHouse.png";
+import { SHOW_CART, countCartRedux } from "../../redux/actions/productActions";
+import Cart from "./Cart";
+import "./Header.scss";
 
 function Header({ clickContent }) {
   const numberRouter = useSelector((state) => state.router.numberRouter);

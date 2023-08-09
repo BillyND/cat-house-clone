@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { fetchAllProductsRedux } from "../../redux/actions/productActions";
-import { getAllProducts } from "../../components/services/apiServices";
 import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import { getAllProducts } from "../../components/services/apiServices";
+import { fetchAllProductsRedux } from "../../redux/actions/productActions";
+import SkeletonCard from "../SkeletonCard/SkeletonCard";
 import "./Product.scss";
 import ProductCard from "./ProductCard";
-import _ from "lodash";
-import SkeletonCard from "../SkeletonCard/SkeletonCard";
-import { v4 as uuidv4 } from "uuid";
 const ListProducts = (props) => {
   const dataAllProduct = useSelector((state) => state.product.product);
   const { limitProduct, collections, setCountProduct, filterPrice } = props;

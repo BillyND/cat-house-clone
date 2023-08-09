@@ -1,8 +1,6 @@
-import { useDispatch } from "react-redux";
 import {
   getAllCategory,
   getAllProducts,
-  getSearchOrder,
 } from "../../components/services/apiServices";
 
 export const FETCH_ALL_PRODUCTS = "FETCH_ALL_PRODUCTS";

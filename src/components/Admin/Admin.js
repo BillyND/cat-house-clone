@@ -1,28 +1,28 @@
-import "./Admin.scss";
 import { useEffect, useRef, useState } from "react";
-import {
-  getAllProducts,
-  getUserLimit,
-  getApiSearch,
-} from "../services/apiServices";
-import AddNewProduct from "./Modal/AddNewProduct";
-import UpdateProduct from "./Modal/UpdateProduct";
-import DeleteProduct from "./Modal/DeleteProduct";
-import ViewProduct from "./Modal/ViewProduct";
-import { FaEye } from "react-icons/fa";
 import { BsPencilFill } from "react-icons/bs";
+import { FaEye } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
-import { TbSearch } from "react-icons/tb";
 import {
   TbPlayerTrackNextFilled,
   TbPlayerTrackPrevFilled,
+  TbSearch,
 } from "react-icons/tb";
 import ReactPaginate from "react-paginate";
-import catGuest from "../../assets/catGuest.jpg";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { useDispatch, useSelector } from "react-redux";
-import { changeRouteRedux } from "../../redux/actions/routerActions";
 import { v4 as uuidv4 } from "uuid";
+import catGuest from "../../assets/catGuest.jpg";
+import { changeRouteRedux } from "../../redux/actions/routerActions";
+import {
+  getAllProducts,
+  getApiSearch,
+  getUserLimit,
+} from "../services/apiServices";
+import "./Admin.scss";
+import AddNewProduct from "./Modal/AddNewProduct";
+import DeleteProduct from "./Modal/DeleteProduct";
+import UpdateProduct from "./Modal/UpdateProduct";
+import ViewProduct from "./Modal/ViewProduct";
 
 function Admin(props) {
   const refInput = useRef(null);

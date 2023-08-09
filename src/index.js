@@ -1,13 +1,13 @@
 import React from "react";
 
-import ReactDOM from "react-dom/client";
-import "./index.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import reportWebVitals from "./reportWebVitals";
-import Layout from "./Layout";
-import { BrowserRouter } from "react-router-dom";
-import { store } from "./redux/store";
+import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import Layout from "./Layout";
+import "./index.scss";
+import { store } from "./redux/store";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

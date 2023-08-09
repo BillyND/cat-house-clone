@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import {
+  Autoplay,
+  EffectCoverflow,
+  Navigation,
+  Pagination
+} from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./Carousel3d.scss";
-import {
-  EffectCoverflow,
-  Pagination,
-  Navigation,
-  Autoplay,
-  SwiperCore,
-} from "swiper";
-import CategoryCard from "../Category/CategoryCard";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllCategoryAction } from "../../redux/actions/productActions";
-import { getAllCategory } from "../services/apiServices";
-import { useNavigate } from "react-router-dom";
-import Skeleton from "../SkeletonCard/Skeleton";
+import "swiper/css/pagination";
 import { v4 as uuidv4 } from "uuid";
+import { getAllCategoryAction } from "../../redux/actions/productActions";
+import Skeleton from "../SkeletonCard/Skeleton";
+import { getAllCategory } from "../services/apiServices";
+import "./Carousel3d.scss";
 
 const Carousel3d = () => {
   const dispatch = useDispatch();

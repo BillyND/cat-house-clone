@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
+import { BsEye, BsEyeSlashFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { apiLogin, apiSignup } from "../components/services/apiServices";
 import "./Auth.scss";
-import { BsEyeSlashFill, BsEye } from "react-icons/bs";
 
 var bcrypt = require("bcryptjs-react");
 
@@ -64,18 +64,18 @@ function Signup() {
     }
 
     //make hash password
-    // let saltPass = bcrypt.genSaltSync(10);
-    // let hashPassword = bcrypt.hashSync(password, saltPass);
+    let saltPass = bcrypt.genSaltSync(10);
+    let hashPassword = bcrypt.hashSync(password, saltPass);
 
     // //make hash username
-    // let saltUsername = bcrypt.genSaltSync(10);
-    // let hashUsername = bcrypt.hashSync(username, saltUsername);
+    let hashUsername = bcrypt.hashSync(username);
 
     //check userName
 
     dataAllUser.map((dataUser) => {
-      // const checkHashUsername = bcrypt.compareSync(username, dataUser.username);
-      if (username === dataUser.username) {
+      const checkHashUsername = bcrypt.compareSync(username, dataUser.username);
+      // if (username === dataUser.username) {
+      if (checkHashUsername) {
         toast.error("Tài khoản đã tồn tại");
         checkUsername = 1;
         setIsloading(false);
@@ -83,7 +83,7 @@ function Signup() {
     });
 
     if (checkUsername === 0 && checkPassword === 0) {
-      const resSignup = await apiSignup(username, password);
+      const resSignup = await apiSignup(hashUsername, hashPassword);
       if (resSignup) {
         setTimeout(async () => {
           navigate("/login");

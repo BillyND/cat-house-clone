@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import { getAllCategoryAction } from "../../redux/actions/productActions";
 import { changeRouteRedux } from "../../redux/actions/routerActions";
 import { getAllCategory } from "../services/apiServices";
 import CategoryCard from "./CategoryCard";
 import SkeletonCategory from "./SkletonCategory";
-import { v4 as uuidv4 } from "uuid";
 function Category(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();

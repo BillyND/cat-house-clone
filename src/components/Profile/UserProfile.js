@@ -1,17 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
+import { toast } from "react-toastify";
+import {
+  putUpdateInfoUserRedux
+} from "../../redux/actions/userActions";
 import {
   getDistrict,
   getProvince,
   getWard,
   putUpdateInfoUser,
 } from "../services/apiServices";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  putInfoUserAction,
-  putUpdateInfoUserRedux,
-} from "../../redux/actions/userActions";
 
 const noneOptions = [];
 

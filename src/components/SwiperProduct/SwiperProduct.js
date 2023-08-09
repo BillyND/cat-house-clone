@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
+import React from "react";
 import { useSelector } from "react-redux";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import { v4 as uuidv4 } from "uuid";
 import ProductCard from "../Products/ProductCard";
 import "./SwiperProduct.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { v4 as uuidv4 } from "uuid";
 const SwiperProduct = (props) => {
   const { initIndex, lastIndex } = props;
 

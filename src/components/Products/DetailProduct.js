@@ -3,19 +3,15 @@ import ReactImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import {
+  SHOW_CART,
+  addToCartRedux,
+  increaseCart
+} from "../../redux/actions/productActions";
+import { changeRouteRedux } from "../../redux/actions/routerActions";
 import { getProductById } from "../services/apiServices";
 import "./DetailProduct.scss";
-import PerfectScrollbar from "react-perfect-scrollbar";
-import {
-  addToCartRedux,
-  decreaseCart,
-  increaseCart,
-  SHOW_CART,
-} from "../../redux/actions/productActions";
-import _ from "lodash";
-import { toast } from "react-toastify";
-import { changeRouteRedux } from "../../redux/actions/routerActions";
-import { TbShoppingCartPlus } from "react-icons/";
 
 function DetailProduct(props) {
   const dataAllProduct = useSelector((state) => state.product.product);

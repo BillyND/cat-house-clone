@@ -129,22 +129,6 @@ const getAllCategory = (keyWrd) => {
 };
 
 export {
-  getAllProducts,
-  postCreateProduct,
-  putUpdateProduct,
-  deleteUser,
-  getUserLimit,
   apiLogin,
-  apiSignup,
-  getProductById,
-  postCartOrder,
-  getProvince,
-  getDistrict,
-  getWard,
-  getSearchOrder,
-  putUpdateInfoUser,
-  getOneUser,
-  getApiSearch,
-  getAllCategory,
-  putCartOrder,
+  apiSignup, deleteUser, getAllCategory, getAllProducts, getApiSearch, getDistrict, getOneUser, getProductById, getProvince, getSearchOrder, getUserLimit, getWard, postCartOrder, postCreateProduct, putCartOrder, putUpdateInfoUser, putUpdateProduct
 };

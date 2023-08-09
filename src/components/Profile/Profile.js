@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { changeRouteRedux } from "../../redux/actions/routerActions";
 import { USER_LOGIN, USER_LOGOUT } from "../../redux/actions/userActions";
 import { getOneUser } from "../services/apiServices";
 import "./Profile.scss";

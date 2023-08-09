@@ -1,22 +1,20 @@
-import App from "./App";
-import { Routes, Route, Navigate } from "react-router-dom";
-import Admin from "./components/Admin/Admin";
-import Home from "./components/Home/Home";
-import { ToastContainer, toast } from "react-toastify";
-import Login from "./Auth/Login";
+import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import App from "./App";
+import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
-import PrivateRoutes from "./routes/PrivateRoutes";
-import DetailProduct from "./components/Products/DetailProduct";
+import Admin from "./components/Admin/Admin";
+import Category from "./components/Category/Category";
+import CategoryDetail from "./components/Category/CategoryDetail";
 import Checkout from "./components/Checkout/Checkout";
+import Collections from "./components/Collections/Collections";
+import Home from "./components/Home/Home";
+import Introduce from "./components/Introduce/Introduce";
+import DetailProduct from "./components/Products/DetailProduct";
 import Profile from "./components/Profile/Profile";
 import SearchOrder from "./components/SearchOrder/SearchOrder";
 import SearchProduct from "./components/SearchProduct/SearchProduct";
-import Category from "./components/Category/Category";
-import CategoryDetail from "./components/Category/CategoryDetail";
-import Collections from "./components/Collections/Collections";
-import Blog from "./components/Blog/Blog";
-import Introduce from "./components/Introduce/Introduce";
 
 function Layout(props) {
   return (
@@ -39,7 +37,6 @@ function Layout(props) {
           <Route path="/category/:keyWord" element={<CategoryDetail />} />
           <Route path="/collections" element={<Collections />} />
           <Route path="/collections/:type" element={<Collections />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/introduce" element={<Introduce />} />
         </Route>
         <Route path="/login" element={<Login />} />

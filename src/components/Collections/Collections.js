@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { BiFilterAlt } from "react-icons/bi";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
-import "./Collections.scss";
-import CollapseFilter from "./CollapseFilter";
 import CollectionBanner from "../../assets/collection_banner.webp";
 import ListProducts from "../Products/ListProducts";
-import { BiFilterAlt } from "react-icons/bi";
+import CollapseFilter from "./CollapseFilter";
+import "./Collections.scss";
 import ModalFilter from "./ModalFilter";
 function Collections(props) {
   const navigate = useNavigate();

@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getOneUser,
-  getSearchOrder,
-  putCartOrder,
-  putUpdateProduct,
-} from "../services/apiServices";
 import _ from "lodash";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
 import {
   putInfoUserAction,
-  putUpdateInfoUserRedux,
-  USER_LOGIN,
+  putUpdateInfoUserRedux
 } from "../../redux/actions/userActions";
+import {
+  putCartOrder
+} from "../services/apiServices";
 import ModalSetStateOrder from "./ModalSetStateOrder";
-import { toast } from "react-toastify";
 function UserListOrder(props) {
   const listOrderUser = useSelector((state) => state.account.listOrderUser);
   const infoUser = useSelector((state) => state.account.user);

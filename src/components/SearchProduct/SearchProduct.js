@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./SearchProduct.scss";
-import { RiSearch2Line } from "react-icons/ri";
+import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { getAllProducts, getApiSearch } from "../services/apiServices";
+import { toast } from "react-toastify";
 import ProductCard from "../Products/ProductCard";
 import SkeletonCard from "../SkeletonCard/SkeletonCard";
-import { toast } from "react-toastify";
-import { changeRouteRedux } from "../../redux/actions/routerActions";
-import { useDispatch } from "react-redux";
+import { getApiSearch } from "../services/apiServices";
+import "./SearchProduct.scss";
 
 function SearchProduct(props) {
   const param = useParams();

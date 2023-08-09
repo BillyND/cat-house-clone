@@ -1,13 +1,11 @@
-import "./App.scss";
-import Header from "./components/Header/Header";
-import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import "react-perfect-scrollbar/dist/css/styles.css";
-import Footer from "./components/Footer/Footer";
-import { useDispatch } from "react-redux";
-import { fetchAllProductsRedux } from "./redux/actions/productActions";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import "react-perfect-scrollbar/dist/css/styles.css";
+import { useDispatch, useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
+import "./App.scss";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 
 function App() {
   const [hState, sethState] = useState("top");

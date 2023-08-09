@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "../SearchProduct/SearchProduct.scss";
-import { RiSearch2Line } from "react-icons/ri";
-import { useNavigate, useParams } from "react-router-dom";
-import { getAllProducts, getApiSearch } from "../services/apiServices";
-import ProductCard from "../Products/ProductCard";
-import SkeletonCard from "../SkeletonCard/SkeletonCard";
-import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import { changeRouteRedux } from "../../redux/actions/routerActions";
 import Carousel3d from "../Carousel3d/Carousel3d";
-import { v4 as uuidv4 } from "uuid";
+import ProductCard from "../Products/ProductCard";
+import "../SearchProduct/SearchProduct.scss";
+import SkeletonCard from "../SkeletonCard/SkeletonCard";
+import { getApiSearch } from "../services/apiServices";
 
 function CategoryDetail(props) {
   const dispatch = useDispatch();

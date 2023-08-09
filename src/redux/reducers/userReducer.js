@@ -1,9 +1,9 @@
 import {
+  DELETE_LIST_ORDER,
+  FETCH_LIST_ORDER,
   UPDATE_USER,
   USER_LOGIN,
   USER_LOGOUT,
-  FETCH_LIST_ORDER,
-  DELETE_LIST_ORDER,
 } from "../actions/userActions";
 
 const INITIAL_STATE = {

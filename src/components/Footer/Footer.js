@@ -1,12 +1,12 @@
+import { MDBCol, MDBContainer, MDBFooter, MDBRow } from "mdb-react-ui-kit";
 import React from "react";
-import { MDBFooter, MDBContainer, MDBCol, MDBRow } from "mdb-react-ui-kit";
 import {
   FaFacebook,
-  FaTwitter,
   FaGithub,
-  FaInstagram,
   FaHome,
+  FaInstagram,
   FaPhoneAlt,
+  FaTwitter,
 } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import "./Footer.scss";
