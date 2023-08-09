@@ -12,6 +12,8 @@ function Cart(props) {
   const dataCart = useSelector((state) => state.product.cartProduct);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const isMobile = window.innerWidth < 991;
+
   const handleClose = () => {
     dispatch({
       type: SHOW_CART,
@@ -38,6 +40,7 @@ function Cart(props) {
         show={show}
         onHide={handleClose}
         className="cart-shopping pt-5 mt-5"
+        size="lg"
       >
         <Modal.Header closeButton>
           <Modal.Title>Giỏ hàng</Modal.Title>
@@ -72,7 +75,9 @@ function Cart(props) {
                             className="detail"
                             onClick={() => handleDetailsProduct(item.id)}
                           >
-                            {` ${item.description.slice(0, 30)} ... `}
+                            {isMobile
+                              ? ` ${item.description.slice(0, 30)} ... `
+                              : item.description}
                           </div>
                           <div className="price me-5">{result}</div>
                         </div>

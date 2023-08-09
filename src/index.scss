@@ -8,7 +8,14 @@ body {
   width: 100%;
 }
 
+*{
+  font-family: 'Quicksand';
+
+  // font-family: Georgia, 'Times New Roman', Times, serif
+}
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
 
 .bg-white {
   background-color: #FFDB15 !important;
