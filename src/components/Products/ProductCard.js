@@ -36,7 +36,6 @@ function ProductCard(props) {
   let funcCountMouse;
   let countMouseDown = 0;
   useEffect(() => {
-    // console.log("eff")
     return () => {
       if (countMouseDown > 10) {
         clearInterval(funcCountMouse);
@@ -45,19 +44,12 @@ function ProductCard(props) {
   }, [countMouseDown]);
 
   const handleMouseDown = async () => {
-    // console.log("down")
     let clickTime = Date.now();
     setIsDrag(clickTime);
-
-    // setTimeout(() => {
-    //     console.log(isDrag)
-    //     // setIsDrag(Date.now())
-    // }, 40)
   };
   const handleMouseUp = async (productId) => {
     let currentTime = Date.now();
     let timeCount = currentTime - isDrag;
-    // console.log("up", timeCount)
     if (timeCount < 300) {
       handleClickProduct(productId);
     }
@@ -68,24 +60,20 @@ function ProductCard(props) {
       className="card-product"
       onMouseDown={() => handleMouseDown()}
       onMouseUp={() => handleMouseUp(product.id)}
-      // onDragCapture={() => { console.log("drag") }}
     >
       <div className="image-container">
         <div className="first">
-          <div className="d-flex justify-content-between align-items-center">
-            {/* <span className="discount" onClick={() => handleClickProduct(product.id)}>-25%</span> */}
-            {/* <span className="wishlist"><i className="fa fa-heart-o"></i></span> */}
-          </div>
+          <div className="d-flex justify-content-between align-items-center"></div>
         </div>
 
         <img
           src={product.image1}
           className="img-fluid rounded thumbnail-image1"
         />
-        <img
+        {/* <img
           src={product.image2}
           className="img-fluid rounded thumbnail-image2"
-        />
+        /> */}
         <ImEye className="icon-eye" />
       </div>
 
