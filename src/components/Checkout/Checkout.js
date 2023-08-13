@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React, { useEffect, useRef, useState } from "react";
 import { GrClose } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,7 +36,7 @@ function Checkout(props) {
   const dataCartAll = useSelector((state) => state.product.cartProduct);
   const userLogin = useSelector((state) => state.account.user);
   const auth = useSelector((state) => state.account.user.auth);
-  const cloneUserLogin = _.cloneDeep(userLogin);
+  const cloneUserLogin = JSON.parse(JSON.stringify(userLogin));
   const dispatch = useDispatch();
   if (!cloneUserLogin.listOrder) {
     cloneUserLogin.listOrder = [];

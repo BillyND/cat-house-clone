@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
@@ -25,7 +24,7 @@ function UserListOrder(props) {
   }
 
   const handeDeleteState = (event) => {
-    let cloneInfoUser = _.cloneDeep(infoUser);
+    let cloneInfoUser = JSON.parse(JSON.stringify(infoUser));
     setShowModalState(true);
     let indexOrderState = infoUser.listOrder.findIndex(
       (item) => item.id === event.id
