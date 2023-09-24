@@ -49,7 +49,9 @@ function Cart(props) {
           <PerfectScrollbar>
             <div className="cart-body">
               {dataCart.length <= 0 ? (
-                <>Giỏ hàng của bạn trống</>
+                <div style={{ textAlign: "center" }}>
+                  Giỏ hàng của bạn trống
+                </div>
               ) : (
                 <>
                   {dataCart.map((item) => {
