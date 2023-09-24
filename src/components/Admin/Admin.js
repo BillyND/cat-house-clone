@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useRef, useState } from "react";
 import { BsPencilFill } from "react-icons/bs";
 import { FaEye } from "react-icons/fa";
@@ -10,7 +11,6 @@ import {
 import ReactPaginate from "react-paginate";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { useDispatch, useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
 import catGuest from "../../assets/catGuest.jpg";
 import { changeRouteRedux } from "../../redux/actions/routerActions";
 import {
@@ -156,11 +156,12 @@ function Admin(props) {
 
               <tbody>
                 {listProducts.map((product, index) => (
-                  <tr key={uuidv4()} className="align-middle">
+                  <tr key={product?.id + index} className="align-middle">
                     {/* <th scope="row">{product.id}</th> */}
                     <td>
                       {product.image1 ? (
                         <img
+                          loading="lazy"
                           src={product.image1}
                           style={{ height: "50px", borderRadius: "10px" }}
                         />
@@ -168,6 +169,7 @@ function Admin(props) {
                         <>
                           {product.image2 ? (
                             <img
+                              loading="lazy"
                               src={product.image2}
                               style={{ height: "50px", borderRadius: "10px" }}
                             />
@@ -175,6 +177,7 @@ function Admin(props) {
                             <>
                               {product.image3 ? (
                                 <img
+                                  loading="lazy"
                                   src={product.image3}
                                   style={{
                                     height: "50px",
@@ -184,6 +187,7 @@ function Admin(props) {
                               ) : (
                                 <>
                                   <img
+                                    loading="lazy"
                                     src={catGuest}
                                     style={{
                                       height: "50px",

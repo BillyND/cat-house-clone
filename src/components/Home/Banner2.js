@@ -19,7 +19,10 @@ function Banner2(props) {
           className="banner2-item-image"
           onClick={() => navigate("/collections/Mèo")}
         >
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorybanner_1_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorybanner_1_img.jpg?v=3"
+          />
         </div>
         <div className="banner2-item-content">
           <h6 onClick={() => navigate("/collections/Mèo")}>
@@ -34,7 +37,10 @@ function Banner2(props) {
           className="banner2-item-image"
           onClick={() => navigate("/collections/Thức ăn")}
         >
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorybanner_2_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorybanner_2_img.jpg?v=3"
+          />
         </div>
         <div className="banner2-item-content">
           <h6 onClick={() => navigate("/collections/Thức ăn")}>
@@ -52,7 +58,10 @@ function Banner2(props) {
 `)
           }
         >
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorybanner_3_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorybanner_3_img.jpg?v=3"
+          />
         </div>
         <div className="banner2-item-content">
           <h6
@@ -79,7 +88,10 @@ function Banner2(props) {
           className="banner2-item-image"
           onClick={() => navigate("/collections/Hotel website")}
         >
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorybanner_4_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorybanner_4_img.jpg?v=3"
+          />
         </div>
         <div className="banner2-item-content">
           <h6 onClick={() => navigate("/collections/Hotel website")}>

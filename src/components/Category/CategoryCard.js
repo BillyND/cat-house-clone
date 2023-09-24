@@ -7,7 +7,7 @@ function CategoryCard(props) {
   return (
     <div className="category-card-container mb-3 ">
       <div className="iamge-category">
-        <img src={imageTypeCat} />
+        <img loading="lazy" src={imageTypeCat} />
       </div>
       <div className="name-category p-3">
         <span>{nameTypeCat}</span>

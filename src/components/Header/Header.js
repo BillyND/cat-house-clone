@@ -110,8 +110,8 @@ function Header({ clickContent }) {
             >
               <div onClick={() => navigate("/")} className="nav-logo-header">
                 <div className="logo-header">
-                  <img src={logoPetShop} className="logo" />
-                  <img src={logoMini} className="logo mini" />
+                  <img loading="lazy" src={logoPetShop} className="logo" />
+                  <img loading="lazy" src={logoMini} className="logo mini" />
                 </div>
               </div>
             </Nav.Link>
@@ -211,8 +211,8 @@ function Header({ clickContent }) {
             >
               <div onClick={() => navigate("/")} className="nav-logo-header">
                 <div className="logo-header">
-                  <img src={logoPetShop} className="logo" />
-                  <img src={logoMini} className="logo mini" />
+                  <img loading="lazy" src={logoPetShop} className="logo" />
+                  <img loading="lazy" src={logoMini} className="logo mini" />
                 </div>
               </div>
             </Nav.Link>

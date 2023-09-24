@@ -80,7 +80,7 @@ const Carousel3d = () => {
                     navigate(`/category/${item.name}`);
                   }}
                 >
-                  <img src={item.image} alt="slide_image" />
+                  <img loading="lazy" src={item.image} alt="slide_image" />
                   <h4 className="name-category text-center pt-2">
                     {item.name}
                   </h4>

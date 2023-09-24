@@ -20,6 +20,7 @@ export default function SwiperBanner() {
           onClick={() => navigate("/collections/all")}
         >
           <img
+            loading="lazy"
             alt=""
             src="https://theme.hstatic.net/200000108863/1000985860/14/slide_1_img.jpg?v=3"
           />
@@ -29,6 +30,7 @@ export default function SwiperBanner() {
           onClick={() => navigate("/collections/all")}
         >
           <img
+            loading="lazy"
             alt=""
             src="https://theme.hstatic.net/200000108863/1000985860/14/slide_2_img.jpg?v=3"
           />
@@ -38,6 +40,7 @@ export default function SwiperBanner() {
           onClick={() => navigate("/collections/all")}
         >
           <img
+            loading="lazy"
             alt=""
             src="https://theme.hstatic.net/200000108863/1000985860/14/slide_3_img.jpg?v=3"
           />
@@ -56,6 +59,7 @@ export default function SwiperBanner() {
           onClick={() => navigate("/collections/all")}
         >
           <img
+            loading="lazy"
             alt=""
             src="https://theme.hstatic.net/200000108863/1000985860/14/slide_1_mb.jpg?v=3"
           />
@@ -65,6 +69,7 @@ export default function SwiperBanner() {
           onClick={() => navigate("/collections/all")}
         >
           <img
+            loading="lazy"
             alt=""
             src="https://theme.hstatic.net/200000108863/1000985860/14/slide_2_mb.jpg?v=3"
           />
@@ -74,6 +79,7 @@ export default function SwiperBanner() {
           onClick={() => navigate("/collections/all")}
         >
           <img
+            loading="lazy"
             alt=""
             src="https://theme.hstatic.net/200000108863/1000985860/14/slide_3_mb.jpg?v=3"
           />

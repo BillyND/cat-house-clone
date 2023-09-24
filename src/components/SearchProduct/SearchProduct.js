@@ -1,5 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import ProductCard from "../Products/ProductCard";
@@ -9,8 +9,7 @@ import "./SearchProduct.scss";
 
 function SearchProduct(props) {
   const param = useParams();
-  const dispatch = useDispatch();
-  const [dataSeach, setDataSearch] = useState([]);
+  const [dataSearch, setDataSearch] = useState([]);
   const [keySearch, setKeySearch] = useState(param.keyWord || "");
   const [isLoading, setIsloading] = useState(true);
   const navigate = useNavigate();
@@ -20,7 +19,7 @@ function SearchProduct(props) {
     fetchProductSearchWord();
     window.scrollTo(0, 0);
     setKeySearch(param.keyWord);
-  }, [param.keyWord || keySearch]);
+  }, [param.keyWord, keySearch]);
 
   useEffect(() => {
     fetchProductSearchWord();
@@ -94,12 +93,12 @@ function SearchProduct(props) {
           <SkeletonCard />
         </div>
       )}
-      {dataSeach.length > 0 && isLoading ? (
+      {dataSearch.length > 0 && isLoading ? (
         <>
           <div className="label-product text-center">
             {param.keyWord && (
               <p>
-                Có <b>{dataSeach.length} sản phẩm</b> cho tìm kiếm
+                Có <b>{dataSearch.length} sản phẩm</b> cho tìm kiếm
               </p>
             )}
           </div>
@@ -109,7 +108,7 @@ function SearchProduct(props) {
           </p>
           <div className="listProduct-content  p-0">
             {isLoading &&
-              dataSeach.map((product, index) => {
+              dataSearch.map((product, index) => {
                 return (
                   <ProductCard key={product.id + index} product={product} />
                 );

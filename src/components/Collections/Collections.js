@@ -51,7 +51,7 @@ function Collections(props) {
         </div>
         <div className="collection-product">
           <div className="image-collections-banner">
-            <img src={CollectionBanner} />
+            <img loading="lazy" src={CollectionBanner} />
           </div>
           <div className="collection-product-content pt-3">
             <div className="collection-product-header pb-3">

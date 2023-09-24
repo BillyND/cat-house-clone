@@ -28,7 +28,10 @@ function ListSearch(props) {
         onClick={() => navigate("/collections/Mèo")}
       >
         <div>
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_1_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_1_img.jpg?v=3"
+          />
         </div>
         <p>Mèo Anh</p>
       </div>
@@ -38,7 +41,10 @@ function ListSearch(props) {
         onClick={() => navigate("/collections/Thức ăn")}
       >
         <div>
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_2_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_2_img.jpg?v=3"
+          />
         </div>
         <p>Thức ăn</p>
       </div>
@@ -48,7 +54,10 @@ function ListSearch(props) {
         onClick={() => navigate("/collections/Sữa, Thực phẩm bổ sung")}
       >
         <div>
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_3_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_3_img.jpg?v=3"
+          />
         </div>
         <p>Dinh dưỡng</p>
       </div>
@@ -58,7 +67,10 @@ function ListSearch(props) {
         onClick={() => navigate("/collections/Vệ sinh")}
       >
         <div>
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_4_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_4_img.jpg?v=3"
+          />
         </div>
         <p>Vệ sinh</p>
       </div>
@@ -68,7 +80,10 @@ function ListSearch(props) {
         onClick={() => navigate("/collections/Sữa tắm")}
       >
         <div>
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_5_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_5_img.jpg?v=3"
+          />
         </div>
         <p>Sữa tắm</p>
       </div>
@@ -78,7 +93,10 @@ function ListSearch(props) {
         onClick={() => navigate("/collections/Sức khoẻ")}
       >
         <div>
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_6_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_6_img.jpg?v=3"
+          />
         </div>
         <p>Sức khoẻ</p>
       </div>
@@ -88,7 +106,10 @@ function ListSearch(props) {
         onClick={() => navigate("/collections/Phụ kiện")}
       >
         <div>
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_7_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_7_img.jpg?v=3"
+          />
         </div>
         <p>Phụ kiện</p>
       </div>
@@ -98,7 +119,10 @@ function ListSearch(props) {
         onClick={() => navigate("/collections/Đồ chơi")}
       >
         <div>
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_8_img.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/categorize_8_img.jpg?v=3"
+          />
         </div>
         <p>Đồ chơi</p>
       </div>

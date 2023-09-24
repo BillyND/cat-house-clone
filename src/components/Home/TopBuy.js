@@ -61,7 +61,10 @@ function TopBuy(props) {
       </div>
       <div className="content-top-buy mt-3">
         <div className="banner-top-buy">
-          <img src="https://theme.hstatic.net/200000108863/1000985860/14/home_coll_1_banner.jpg?v=3" />
+          <img
+            loading="lazy"
+            src="https://theme.hstatic.net/200000108863/1000985860/14/home_coll_1_banner.jpg?v=3"
+          />
         </div>
         <div className="list-item-top-buy">
           <ListProduct limitProduct={10} collections={collections} />

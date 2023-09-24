@@ -65,7 +65,11 @@ function Cart(props) {
                           className="img-cart-product mt-1"
                           onClick={() => handleDetailsProduct(item.id)}
                         >
-                          <img className="img-cart-product" src={item.image1} />
+                          <img
+                            loading="lazy"
+                            className="img-cart-product"
+                            src={item.image1}
+                          />
                           <span className="quantity-product">
                             {item.quantity || 1}
                           </span>

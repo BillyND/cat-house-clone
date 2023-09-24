@@ -41,7 +41,7 @@ function DeleteProduct(props) {
             {inforDelete.image1 ? (
               <div className="image-show-delete">
                 {" "}
-                <img src={inforDelete.image1} />
+                <img loading="lazy" src={inforDelete.image1} />
               </div>
             ) : (
               <></>

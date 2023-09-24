@@ -232,7 +232,11 @@ function SearchOrder(props) {
                     key={item.id + index}
                   >
                     <div className="image-list-left">
-                      <img className="image-left" src={item.image} />
+                      <img
+                        loading="lazy"
+                        className="image-left"
+                        src={item.image}
+                      />
                     </div>
                     <div className="infor-list-right">
                       <div>

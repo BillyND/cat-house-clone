@@ -91,6 +91,7 @@ function UserListOrder(props) {
                           <div className="top  p-3">
                             <div className="image-detail-order">
                               <img
+                                loading="lazy"
                                 className="image-detail"
                                 src={itemCart.image}
                               />

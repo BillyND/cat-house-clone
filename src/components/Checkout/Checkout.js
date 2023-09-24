@@ -424,7 +424,7 @@ function Checkout(props) {
                         key={uuidv4()}
                       >
                         <div className="image-product-checkout">
-                          <img src={item.image1} />
+                          <img loading="lazy" src={item.image1} />
                           <span className="counter-product">
                             {item.quantity}
                           </span>

@@ -67,10 +67,11 @@ function ProductCard(props) {
         </div>
 
         <img
+          loading="lazy"
           src={product.image1}
           className="img-fluid rounded thumbnail-image1"
         />
-        {/* <img
+        {/* <img loading="lazy"
           src={product.image2}
           className="img-fluid rounded thumbnail-image2"
         /> */}

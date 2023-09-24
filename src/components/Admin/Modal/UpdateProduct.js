@@ -276,21 +276,33 @@ function UpdateProduct(props) {
                   <>
                     {previewImage1 ? (
                       <div className="list-image-preview mx-1">
-                        <img className="image-preview" src={previewImage1} />
+                        <img
+                          loading="lazy"
+                          className="image-preview"
+                          src={previewImage1}
+                        />
                       </div>
                     ) : (
                       <></>
                     )}
                     {previewImage2 ? (
                       <div className="list-image-preview mx-1">
-                        <img className="image-preview" src={previewImage2} />
+                        <img
+                          loading="lazy"
+                          className="image-preview"
+                          src={previewImage2}
+                        />
                       </div>
                     ) : (
                       <></>
                     )}
                     {previewImage3 ? (
                       <div className="list-image-preview mx-1">
-                        <img className="image-preview" src={previewImage3} />
+                        <img
+                          loading="lazy"
+                          className="image-preview"
+                          src={previewImage3}
+                        />
                       </div>
                     ) : (
                       <></>

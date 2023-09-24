@@ -31,7 +31,10 @@ function Introduce(props) {
         <div className="information mt-5 pt-4">
           <div className="information-column">
             <div className="information-image">
-              <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_information_1_ico.png?v=3" />
+              <img
+                loading="lazy"
+                src="https://theme.hstatic.net/200000108863/1000985860/14/about02_information_1_ico.png?v=3"
+              />
             </div>
             <div className="information-content">
               <h5>ĐỘI NGŨ CO-FOUNDER</h5>
@@ -45,7 +48,10 @@ function Introduce(props) {
           </div>
           <div className="information-column">
             <div className="information-image">
-              <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_information_2_ico.png?v=3" />
+              <img
+                loading="lazy"
+                src="https://theme.hstatic.net/200000108863/1000985860/14/about02_information_2_ico.png?v=3"
+              />
             </div>
             <div className="information-content">
               <h5>SẢN PHẨM ĐẶC BIỆT</h5>
@@ -59,7 +65,10 @@ function Introduce(props) {
           </div>
           <div className="information-column">
             <div className="information-image">
-              <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_information_3_ico.png?v=3" />
+              <img
+                loading="lazy"
+                src="https://theme.hstatic.net/200000108863/1000985860/14/about02_information_3_ico.png?v=3"
+              />
             </div>
             <div className="information-content">
               <h5>KHÁCH HÀNG LÀ HOÀNG THƯỢNG</h5>
@@ -81,7 +90,10 @@ function Introduce(props) {
           <div className="policy-column">
             <div className="policy-item">
               <div className="policy-item-logo">
-                <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_1_ico.png?v=3" />
+                <img
+                  loading="lazy"
+                  src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_1_ico.png?v=3"
+                />
               </div>
               <div className="policy-item-content">
                 <h6>100% Mèo Anh thuần chủng</h6>
@@ -94,7 +106,10 @@ function Introduce(props) {
             </div>
             <div className="policy-item">
               <div className="policy-item-logo">
-                <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_2_ico.png?v=3" />
+                <img
+                  loading="lazy"
+                  src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_2_ico.png?v=3"
+                />
               </div>
               <div className="policy-item-content">
                 <h6>Sức khoẻ&Tiêm phòng</h6>
@@ -106,7 +121,10 @@ function Introduce(props) {
             </div>
             <div className="policy-item">
               <div className="policy-item-logo">
-                <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_3_ico.png?v=3" />
+                <img
+                  loading="lazy"
+                  src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_3_ico.png?v=3"
+                />
               </div>
               <div className="policy-item-content">
                 <h6>Chính sách bảo hành </h6>
@@ -121,6 +139,7 @@ function Introduce(props) {
 
           <div className="policy-column">
             <img
+              loading="lazy"
               className="img-center"
               src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_img.jpg?v=3"
             />
@@ -129,7 +148,10 @@ function Introduce(props) {
           <div className="policy-column">
             <div className="policy-item">
               <div className="policy-item-logo">
-                <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_1_ico.png?v=3" />
+                <img
+                  loading="lazy"
+                  src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_1_ico.png?v=3"
+                />
               </div>
               <div className="policy-item-content">
                 <h6>100% Mèo Anh thuần chủng</h6>
@@ -142,7 +164,10 @@ function Introduce(props) {
             </div>
             <div className="policy-item">
               <div className="policy-item-logo">
-                <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_2_ico.png?v=3" />
+                <img
+                  loading="lazy"
+                  src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_2_ico.png?v=3"
+                />
               </div>
               <div className="policy-item-content">
                 <h6>Sức khoẻ&Tiêm phòng</h6>
@@ -154,7 +179,10 @@ function Introduce(props) {
             </div>
             <div className="policy-item">
               <div className="policy-item-logo">
-                <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_3_ico.png?v=3" />
+                <img
+                  loading="lazy"
+                  src="https://theme.hstatic.net/200000108863/1000985860/14/about02_ecosystem_3_ico.png?v=3"
+                />
               </div>
               <div className="policy-item-content">
                 <h6>Chính sách bảo hành </h6>
@@ -172,7 +200,10 @@ function Introduce(props) {
           <div className="other-infor-column">
             <div className="other-infor-image">
               <div className="behide-image"></div>
-              <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_alternate_1_img.jpg?v=3" />
+              <img
+                loading="lazy"
+                src="https://theme.hstatic.net/200000108863/1000985860/14/about02_alternate_1_img.jpg?v=3"
+              />
             </div>
             <div className="other-infor-content">
               <h4>CÁC MÀU MÈO ANH LÔNG NGẮN TẠI CATHOUSE</h4>
@@ -213,7 +244,10 @@ function Introduce(props) {
             </div>
             <div className="other-infor-image">
               <div className="behide-image"></div>
-              <img src="https://theme.hstatic.net/200000108863/1000985860/14/about02_alternate_2_img.jpg?v=3" />
+              <img
+                loading="lazy"
+                src="https://theme.hstatic.net/200000108863/1000985860/14/about02_alternate_2_img.jpg?v=3"
+              />
             </div>
           </div>
         </div>
