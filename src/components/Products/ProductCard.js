@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ImEye } from "react-icons/im";
-import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { addToCartRedux } from "../../redux/actions/productActions";
 
 function ProductCard(props) {
-  const [isDrag, setIsDrag] = useState();
-  useEffect(() => {}, []);
+  let isClickProduct = false;
+  let isDragProduct = false;
 
-  const dispatch = useDispatch();
+  useEffect(() => {}, []);
 
   const navigate = useNavigate();
 
@@ -17,40 +15,21 @@ function ProductCard(props) {
   };
   const { product } = props;
   var number = +product.price;
-  var numberOld = Math.floor(+product.price * 1.25);
   const result =
     number.toLocaleString(undefined, {
       minimumFractionDigits: 0,
       maximumFractionDigits: 3,
     }) + " đ";
-  const resultOld =
-    numberOld.toLocaleString(undefined, {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 3,
-    }) + " đ";
-
-  const handleCheckout = async () => {
-    dispatch(addToCartRedux(product));
-    navigate(`/checkout/${product.id}`);
-  };
-  let funcCountMouse;
-  let countMouseDown = 0;
-  useEffect(() => {
-    return () => {
-      if (countMouseDown > 10) {
-        clearInterval(funcCountMouse);
-      }
-    };
-  }, [countMouseDown]);
 
   const handleMouseDown = async () => {
-    let clickTime = Date.now();
-    setIsDrag(clickTime);
+    isClickProduct = true;
   };
+
   const handleMouseUp = async (productId) => {
-    let currentTime = Date.now();
-    let timeCount = currentTime - isDrag;
-    if (timeCount < 300) {
+    isClickProduct = false;
+    if (isDragProduct) {
+      isDragProduct = false;
+    } else {
       handleClickProduct(productId);
     }
   };
@@ -60,6 +39,11 @@ function ProductCard(props) {
       className="card-product"
       onMouseDown={() => handleMouseDown()}
       onMouseUp={() => handleMouseUp(product.id)}
+      onMouseMove={(e) => {
+        if (isClickProduct) {
+          isDragProduct = true;
+        }
+      }}
     >
       <div className="image-container">
         <div className="first">
@@ -70,11 +54,9 @@ function ProductCard(props) {
           loading="lazy"
           src={product.image1}
           className="img-fluid rounded thumbnail-image1"
+          alt=""
         />
-        {/* <img loading="lazy"
-          src={product.image2}
-          className="img-fluid rounded thumbnail-image2"
-        /> */}
+        <span className="img-fluid rounded thumbnail-image1" />
         <ImEye className="icon-eye" />
       </div>
 

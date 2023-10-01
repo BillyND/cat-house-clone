@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import SwiperBanner from "../SwiperBanner/SwiperBanner";
@@ -9,12 +9,35 @@ import Banner2 from "./Banner2";
 import ListSearch from "./ListSearch";
 import TimeCounter from "./TimeCounter";
 import TopBuy from "./TopBuy";
+
+export function randomFrom0To40() {
+  return Math.floor(Math.random() * 41);
+}
+
 function Home(props) {
   const navigate = useNavigate();
+  const stateSaleRandom = JSON.parse(localStorage?.getItem("stateSaleRandom"));
+  const dateSaleOld = stateSaleRandom?.date;
+  const [randomSale, setRandomSate] = useState(stateSaleRandom?.randomNumber);
+  const dateToday = new Date().getDate();
+
+  if (!randomSale || dateToday !== dateSaleOld) {
+    const newRandomNumber = randomFrom0To40();
+    setRandomSate(newRandomNumber);
+    localStorage?.setItem(
+      "stateSaleRandom",
+      JSON.stringify({
+        randomNumber: newRandomNumber,
+        date: dateToday,
+      })
+    );
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  console.log(">>>randomSale:", randomSale);
 
   return (
     <div className="homePage">
@@ -43,7 +66,7 @@ function Home(props) {
           </div>
         </h5>
         <div className="top-sale-off">
-          <SwiperProduct initIndex={20} lastIndex={40} />
+          <SwiperProduct initIndex={randomSale} lastIndex={randomSale + 10} />
         </div>
 
         <div
@@ -62,7 +85,7 @@ function Home(props) {
             TOP SẢN PHẨM MỚI
           </h4>
         </div>
-        <SwiperProduct initIndex={0} lastIndex={21} />
+        <SwiperProduct initIndex={0} lastIndex={15} />
       </div>
 
       {/* Top search */}

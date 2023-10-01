@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import { v4 as uuidv4 } from "uuid";
 import ProductCard from "../Products/ProductCard";
 import "./SwiperProduct.scss";
 const SwiperProduct = (props) => {
@@ -48,13 +47,8 @@ const SwiperProduct = (props) => {
         {dataAllProduct.map((product, index) => {
           if (index > initIndex - 1 && index < lastIndex) {
             return (
-              <div key={uuidv4()}>
-                {
-                  // product.collection === "Mèo" &&
-                  // <div className='horizon-item'>
-                  <ProductCard key={index} product={product} />
-                  // </div>
-                }
+              <div key={product?.id + "-" + index}>
+                {<ProductCard key={index} product={product} />}
               </div>
             );
           }

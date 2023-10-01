@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
@@ -11,7 +12,7 @@ const ListProducts = (props) => {
   const { limitProduct, collections, setCountProduct, filterPrice } = props;
   const dispatch = useDispatch();
   const [dataNew, setDataNew] = useState([]);
-  const [isLoading, setIsloading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     dispatch(fetchAllProductsRedux());
     fetchAllProduct();
@@ -92,12 +93,12 @@ const ListProducts = (props) => {
           handleFilterPrice(filterPrice, dataFilterPrice, dataNewReverse);
         } else {
           dataCollections = dataNewReverse.filter(
-            (item) => item.collection == collections
+            (item) => item.collection === collections
           );
 
           setDataNew(dataCollections);
           setTimeout(() => {
-            setIsloading(true);
+            setIsLoading(true);
           }, 300);
           setCountProduct(dataCollections.length);
         }
@@ -110,15 +111,15 @@ const ListProducts = (props) => {
       handleFilterPrice(filterPrice, dataFilterPrice, dataCollections);
 
       setTimeout(() => {
-        setIsloading(true);
+        setIsLoading(true);
       }, 300);
     } catch (error) {
-      // console.log(error)
+      console.error(error);
     }
   };
   return (
     <>
-      {dataNew.length <= 0 && (
+      {dataNew.length <= 0 && isLoading && (
         <span className="container">Chưa có sản phẩm nào trong mục này</span>
       )}
       <div className="listProduct-content ">
