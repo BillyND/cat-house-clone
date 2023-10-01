@@ -33,16 +33,15 @@ function App() {
 
   return (
     <div className="App">
-      {scrollPosition > 400 && (
-        <div
-          className="scroll-to-top "
-          onClick={() => {
-            window.scrollTo(0, 0);
-          }}
-        >
-          <BsFillArrowUpCircleFill className="to-top" />
-        </div>
-      )}
+      <div
+        className={`scroll-to-top ${scrollPosition > 400 ? "show" : "hidden"}`}
+        onClick={() => {
+          window.scrollTo(0, 0);
+        }}
+      >
+        <BsFillArrowUpCircleFill className="to-top" />
+      </div>
+
       <div className="banner-header">
         {/* <span>
           Miễn phí vận chuyển với đơn hàng trên <b>500k</b>
@@ -51,7 +50,6 @@ function App() {
       <div className={"header"}>
         <Header clickContent={closeNav} />
       </div>
-
       <div className="content  container" onClick={handleClickContent}>
         <Outlet />
       </div>

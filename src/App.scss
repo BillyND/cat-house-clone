@@ -21,6 +21,18 @@
     cursor: pointer;
     color: #dc4c64;
   }
+  transition: 0.5s;
+}
+
+.scroll-to-top.show {
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.scroll-to-top.hidden {
+  transition: 0.5s;
+  opacity: 0;
+  margin-right: -100px;
 }
 
 .App {

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { MDBCol, MDBContainer, MDBFooter, MDBRow } from "mdb-react-ui-kit";
 import React from "react";
 import {
@@ -23,22 +24,38 @@ const Footer = () => {
           </div>
           <div className="icon-contact-list">
             <div>
-              <a className="me-4 text-reset">
+              <a
+                className="me-4 "
+                target="_blank"
+                href="https://github.com/BillyND/cat-house-clone"
+              >
                 <FaFacebook className="icon-contact" />
               </a>
             </div>
             <div>
-              <a className="me-4 text-reset">
+              <a
+                className="me-4 "
+                target="_blank"
+                href="https://github.com/BillyND/cat-house-clone"
+              >
                 <FaTwitter className="icon-contact" />
               </a>
             </div>
             <div>
-              <a className="me-4 text-reset">
+              <a
+                className="me-4 "
+                target="_blank"
+                href="https://github.com/BillyND/cat-house-clone"
+              >
                 <FaGithub className="icon-contact" />
               </a>
             </div>
             <div>
-              <a className="me-4 text-reset">
+              <a
+                className="me-4"
+                target="_blank"
+                href="https://github.com/BillyND/cat-house-clone"
+              >
                 <FaInstagram className="icon-contact" />
               </a>
             </div>
@@ -113,12 +130,14 @@ const Footer = () => {
           className="text-center p-4"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
         >
-          © 2023 Copyright:
+          {"© 2023 Copyright: "}
           <a
             className="text-reset fw-bold"
-            href="https://github.com/BillyND/cat-house-clone" target="_blank"
+            href="https://cathouse.vn/"
+            target="_blank"
+            rel="noreferrer"
           >
-            PETSHOP
+            CatHouse
           </a>
         </div>
       </MDBFooter>

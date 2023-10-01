@@ -2,6 +2,12 @@
   position: relative !important;
 }
 
+.slick-slider:hover {
+  .slick-arrow {
+    opacity: 1;
+  }
+}
+
 .slick {
   width: 100% !important;
   padding: 0 !important;
@@ -9,24 +15,25 @@
   padding-bottom: 40px !important;
 }
 
-// ul.slick-dots {
-//   display: none !important;
-// }
-
 .slick-slide {
   color: black;
+}
+
+.slick-arrow {
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .slick-arrow.slick-next {
   scale: 2;
   margin-right: 33px;
-  z-index: 1000;
+  z-index: 2;
 }
 
 .slick-arrow.slick-prev {
   scale: 2;
   margin-left: 33px;
-  z-index: 1000;
+  z-index: 2;
 }
 
 .slick-arrow.slick-next::before {

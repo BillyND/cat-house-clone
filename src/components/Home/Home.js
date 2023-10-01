@@ -37,8 +37,6 @@ function Home(props) {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log(">>>randomSale:", randomSale);
-
   return (
     <div className="homePage">
       {/* Banner top */}

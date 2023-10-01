@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 function ProductCard(props) {
   let isClickProduct = false;
   let isDragProduct = false;
+  let idProductClicked = "";
 
   useEffect(() => {}, []);
 
@@ -21,11 +22,13 @@ function ProductCard(props) {
       maximumFractionDigits: 3,
     }) + " đ";
 
-  const handleMouseDown = async () => {
+  const handleMouseDown = async (idProduct) => {
+    idProductClicked = idProduct;
     isClickProduct = true;
   };
 
   const handleMouseUp = async (productId) => {
+    console.log(">>>>isDragProduct:", isDragProduct);
     isClickProduct = false;
     if (isDragProduct) {
       isDragProduct = false;
@@ -37,8 +40,8 @@ function ProductCard(props) {
   return (
     <div
       className="card-product"
-      onMouseDown={() => handleMouseDown()}
-      onMouseUp={() => handleMouseUp(product.id)}
+      onMouseDown={() => handleMouseDown(product?.id)}
+      onMouseUp={() => handleMouseUp(product?.id)}
       onMouseMove={(e) => {
         if (isClickProduct) {
           isDragProduct = true;
