@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://enshrined-various-smelt.glitch.me/",
+  baseURL: "https://cat-house-be.onrender.com/",
 });
 
 // Add a request interceptor
